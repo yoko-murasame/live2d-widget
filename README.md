@@ -109,6 +109,19 @@ npm run build
 
 也可以使用 Cloudflare Pages 来部署。在 Cloudflare Pages 中创建一个新的项目，选择你 Fork 的仓库。接下来，设置构建命令为 `npm run build`。完成后，Cloudflare Pages 会自动构建并部署你的项目。
 
+下载 `CubismSdkForWeb-5-r.4` 丢入 `src` 目录后，提交代码，到 Cloudflare Pages 中，输入以下命令编译：
+
+```shell
+cd ./src/CubismSdkForWeb-5-r.4/Samples/TypeScript/Demo/ && npm install && cd - && npm run build
+```
+
+先部署一次，成功后，绑定好自己的域名，然后修改 `dist/autoload.js` -> `live2d_path` 为自己的域名（注意末尾反斜杠） `https://xxx.xxx.com/` ，重新部署后，在自己工程里加载即可。
+
+```http
+https://xxx.xxx.com/autoload.js
+```
+
+
 ### Self-host
 
 你也可以直接把这些文件放到服务器上，而不是通过 CDN 加载。
